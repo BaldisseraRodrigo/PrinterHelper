@@ -1,7 +1,7 @@
 import { BackButton } from '@/components/button';
 import Header from '@/components/header';
 import React, { useState } from 'react';
-import { ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { ScrollView, Switch, Text, TextInput, View, StyleSheet} from 'react-native';
 
 export default function FormPrep() {
   const [infraChecked, setInfraChecked] = useState(false);
@@ -12,16 +12,15 @@ export default function FormPrep() {
     <View style={{ flex: 1, backgroundColor: '#fff'}}>
       <Header subtitle="FORMULÁRIO DE INSTALAÇÃO"/>
 
-      <ScrollView 
-        contentContainerStyle={{alignItems: 'center', marginTop: 60}}>
-        <Text>OS:</Text>
-        <TextInput 
-          style={{ borderWidth: 1, borderColor: '#ccc', width: '75%', padding: 10, borderRadius: 5, marginBottom: 10 }} keyboardType="numeric"
-        />
-
-        <Text>Técnico Responsável:</Text>
-        <TextInput 
-          style={{ borderWidth: 1, borderColor: '#ccc', width: '75%', padding: 10, borderRadius: 5, marginBottom: 10 }}/>
+      <ScrollView contentContainerStyle={{alignItems: 'center', marginTop: 60}}>
+          <View style={styles.principalData}>
+            <Text>OS:</Text>
+            <TextInput style={styles.inputTxt} keyboardType="numeric"/>
+            <Text>Data:</Text>
+            <TextInput style={styles.inputTxt}/>
+            <Text>Técnico Responsável:</Text>
+            <TextInput style={styles.inputTxt}/>
+          </View>
 
         <Text>Técnico Auxiliar:</Text>
         <TextInput 
@@ -62,3 +61,17 @@ export default function FormPrep() {
     </View>
   );
 }
+
+export const styles = StyleSheet.create({
+    principalData: {
+      borderBottomColor: 'black'
+    },
+    inputTxt: { 
+      borderWidth: 1,
+      borderColor: '#ccc',
+      width: '75%',
+      padding: 10,
+      borderRadius: 5,
+      marginBottom: 10 
+    }
+})
