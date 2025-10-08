@@ -2,6 +2,7 @@ import { BackButton } from '@/components/button';
 import Header from '@/components/header';
 import React, { useState } from 'react';
 import { ScrollView, Switch, Text, TextInput, View, StyleSheet} from 'react-native';
+import { SwitchButton } from '@/components/switch';
 
 export default function FormPrep() {
   const [infraChecked, setInfraChecked] = useState(false);
@@ -9,11 +10,12 @@ export default function FormPrep() {
   const [conexaoChecked, setConexaoChecked] = useState(false);
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#fff'}}>
+    <View>
       <Header subtitle="FORMULÁRIO DE INSTALAÇÃO"/>
 
-      <ScrollView contentContainerStyle={{alignItems: 'center', marginTop: 60}}>
-          <View style={styles.principalData}>
+      <ScrollView>
+          <Text style={styles.title}>DADOS PRINCIPAIS</Text>
+          <View style={styles.container}>
             <Text>OS:</Text>
             <TextInput style={styles.inputTxt} keyboardType="numeric"/>
             <Text>Data:</Text>
@@ -22,39 +24,48 @@ export default function FormPrep() {
             <TextInput style={styles.inputTxt}/>
           </View>
 
-        <Text>Técnico Auxiliar:</Text>
-        <TextInput 
-          style={{ borderWidth: 1, borderColor: '#ccc', width: '75%', padding: 10, borderRadius: 5, marginBottom: 10 }}/>
+          <Text style={styles.title}>MONTAGEM</Text>
+          <View style={styles.container}>
+            <SwitchButton text='RETIRAR os lacres'/>
+            <SwitchButton text='MONTAR os encartes em Português'/>
+            <SwitchButton text='MONTAR ADF e retirar a trava do scanner (modelos A3)'/>
 
-        <Text>Local:</Text>
-        <TextInput 
-          style={{ borderWidth: 1, borderColor: '#ccc', width: '75%', padding: 10, borderRadius: 5, marginBottom: 10 }}/>
 
-        <Text>Setor:</Text>
-        <TextInput 
-          style={{ borderWidth: 1, borderColor: '#ccc', width: '75%', padding: 10, borderRadius: 5, marginBottom: 20 }}/>
 
-        <Text style={{ fontWeight: 'bold', fontSize: 16, marginBottom: 10 }}>PRÉ-INSTALAÇÃO</Text>
+            <Switch/><Text>MONTAR ADF e retirar a trava do scanner (modelos A3);</Text>
+            <Switch/><Text>MONTAR a caixa de resíduos;</Text>
+            <Switch/><Text>MONTAR o(s) toner(s);</Text>
+            <Switch/><Text>LIGAR o equipamento para a adição de toner;</Text>
+            <Switch/><Text>ATUALIZAR o firmware;</Text>
+          </View>
 
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 5 }}>
-          <Switch 
-            value={infraChecked} onValueChange={setInfraChecked}/>
-          <Text style={{ marginLeft: 8 }}>Verificar infraestrutura do local</Text>
-        </View>
+          <Text style={styles.title}>CONFIGURAÇÕES</Text>
+          <View style={styles.container}>
+              <View style={styles.subContainer}>
+                <Switch/><Text>ALTERAR o idioma para Português Brasil;</Text>
+              </View>
+            <Switch/><Text>ALTERAR o fuso-horário para Brasília GMT -3:00;</Text>
+            <Switch/><Text>AJUSTAR a data e hora;</Text>
+            <Switch/><Text>MONTAR a caixa de resíduos;</Text>
+            <Switch/><Text>AJUSTAR o modo de inatividade para o máximo;</Text>
+            <Switch/><Text>AJUSTAR os tamanhos de papel e tipo de todas as bandejas;</Text>
+            <Switch/><Text>COLAR a etiqueta;</Text>
+          </View>
 
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 5 }}>
-          <Switch 
-            value={posicaoChecked} 
-            onValueChange={setPosicaoChecked}/>
-          <Text style={{ marginLeft: 8 }}>Posicionar equipamento</Text>
-        </View>
+          <Text style={styles.title}>TESTES</Text>
+          <View style={styles.container}>
+            <Switch/><Text>IMPRIMIR a página de status;</Text>
+            <Switch/><Text>TESTAR o equipamento na rede;</Text>
+            <Switch/><Text>TESTAR a digitalização normal e frente-verso;</Text>
+            <Switch/><Text>TESTAR a cópia normal e frente-verso;</Text>
+          </View>
 
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
-          <Switch 
-            value={conexaoChecked} 
-            onValueChange={setConexaoChecked}/>
-          <Text style={{ marginLeft: 8 }}>Conectar cabos e ligar equipamento</Text>
-        </View>
+          <Text style={styles.title}>FINALIZAÇÃO</Text>
+          <View style={styles.container}>
+            <Switch/><Text>COLAR a etiqueta;</Text>
+            <Switch/><Text>DEIXAR sobre o equipamento o cabo de força e a página de status;</Text>
+            <Switch/><Text>EMBALAR o equipamento e colocar no palete de equipamentos prontos;</Text>
+          </View>
           <BackButton/>
 
       </ScrollView>
@@ -63,8 +74,26 @@ export default function FormPrep() {
 }
 
 export const styles = StyleSheet.create({
-    principalData: {
-      borderBottomColor: 'black'
+    title: {
+      fontWeight: 'bold',
+      top: 100,
+      textAlign: 'center',
+    },
+    text: {
+flexDirection: 'row',
+    },
+    container: {
+      borderStyle: 'solid',
+      borderColor: 'red',
+      borderWidth: 1,
+      padding: 20,
+      margin: 20,
+      top: 100,
+      alignItems: 'center',
+    },
+    subContainer: {
+      borderBottomColor: 'black',
+      flexDirection: 'row'
     },
     inputTxt: { 
       borderWidth: 1,
