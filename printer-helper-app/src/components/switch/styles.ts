@@ -7,6 +7,6 @@ export const styles = StyleSheet.create({
     },
     
     data: {
-        color: 'red',
+        fontSize: 15,
     },
 })

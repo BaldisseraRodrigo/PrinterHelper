@@ -1,8 +1,9 @@
 import { BackButton } from '@/components/button';
 import Header from '@/components/header';
 import React, { useState } from 'react';
-import { ScrollView, Switch, Text, TextInput, View, StyleSheet} from 'react-native';
+import { ScrollView, Text, View, StyleSheet} from 'react-native';
 import { SwitchButton } from '@/components/switch';
+import { InputNumber, InputData, InputText } from '@/components/input';
 
 export default function FormPrep() {
   const [infraChecked, setInfraChecked] = useState(false);
@@ -14,60 +15,57 @@ export default function FormPrep() {
       <Header subtitle="FORMULÁRIO DE INSTALAÇÃO"/>
 
       <ScrollView>
-          <Text style={styles.title}>DADOS PRINCIPAIS</Text>
-          <View style={styles.container}>
-            <Text>OS:</Text>
-            <TextInput style={styles.inputTxt} keyboardType="numeric"/>
-            <Text>Data:</Text>
-            <TextInput style={styles.inputTxt}/>
-            <Text>Técnico Responsável:</Text>
-            <TextInput style={styles.inputTxt}/>
+
+          <View style={styles.form}>
+            <Text style={styles.title}>DADOS PRINCIPAIS</Text>
+            <InputNumber titleForm='OS'/>
+            <InputData titleForm='Data'/>
+            <InputText titleForm='Técnico Responsável'/>
           </View>
 
-          <Text style={styles.title}>MONTAGEM</Text>
-          <View style={styles.container}>
+          <View style={styles.checklist}>
+            <Text style={styles.title}>MONTAGEM</Text>
             <SwitchButton text='RETIRAR os lacres'/>
             <SwitchButton text='MONTAR os encartes em Português'/>
-            <SwitchButton text='MONTAR ADF e retirar a trava do scanner (modelos A3)'/>
-
-
-
-            <Switch/><Text>MONTAR ADF e retirar a trava do scanner (modelos A3);</Text>
-            <Switch/><Text>MONTAR a caixa de resíduos;</Text>
-            <Switch/><Text>MONTAR o(s) toner(s);</Text>
-            <Switch/><Text>LIGAR o equipamento para a adição de toner;</Text>
-            <Switch/><Text>ATUALIZAR o firmware;</Text>
+            <SwitchButton text='MONTAR ADF e destravar scanner (A3)'/>
+            <SwitchButton text='MONTAR a caixa de resíduos'/>
+            <SwitchButton text='MONTAR o(s) toner(s)'/>
+            <SwitchButton text='LIGAR o máquina para adiçionar toner'/>
+            <SwitchButton text='ATUALIZAR o firmware'/>
+          </View>
+          
+          <View style={styles.checklist}>
+          <Text style={styles.title}>MODO DE MANUTENÇÃO (1087 1087)</Text>
+            <SwitchButton text='ATUALIZAR o preto (486, Mode 1)'/>
+            <SwitchButton text='HABILITAR níveis de cores (332)'/>
+            <SwitchButton text='ALTERAR para modo Europeu (252)'/>
           </View>
 
-          <Text style={styles.title}>CONFIGURAÇÕES</Text>
-          <View style={styles.container}>
-              <View style={styles.subContainer}>
-                <Switch/><Text>ALTERAR o idioma para Português Brasil;</Text>
-              </View>
-            <Switch/><Text>ALTERAR o fuso-horário para Brasília GMT -3:00;</Text>
-            <Switch/><Text>AJUSTAR a data e hora;</Text>
-            <Switch/><Text>MONTAR a caixa de resíduos;</Text>
-            <Switch/><Text>AJUSTAR o modo de inatividade para o máximo;</Text>
-            <Switch/><Text>AJUSTAR os tamanhos de papel e tipo de todas as bandejas;</Text>
-            <Switch/><Text>COLAR a etiqueta;</Text>
+          <View style={styles.checklist}>
+            <Text style={styles.title}>CONFIGURAÇÕES</Text>
+            <SwitchButton text='ALTERAR o idioma para PT-BR'/>
+            <SwitchButton text='ALTERAR o fuso-horário para Brasília'/>
+            <SwitchButton text='AJUSTAR a data e hora'/>
+            <SwitchButton text='AJUSTAR o modo inativo para o máximo'/>
+            <SwitchButton text='ALTERAR tamanhos e tipos das bandejas'/>
+            <SwitchButton text='COLAR a etiqueta'/>
           </View>
 
-          <Text style={styles.title}>TESTES</Text>
-          <View style={styles.container}>
-            <Switch/><Text>IMPRIMIR a página de status;</Text>
-            <Switch/><Text>TESTAR o equipamento na rede;</Text>
-            <Switch/><Text>TESTAR a digitalização normal e frente-verso;</Text>
-            <Switch/><Text>TESTAR a cópia normal e frente-verso;</Text>
+          <View style={styles.checklist}>
+            <Text style={styles.title}>TESTES</Text>
+            <SwitchButton text='IMPRIMIR a página de status'/>
+            <SwitchButton text='TESTAR o equipamento na rede'/>
+            <SwitchButton text='TESTAR a digitalização normal e duplex'/>
+            <SwitchButton text='TESTAR a cópia normal e duplex'/>
           </View>
 
-          <Text style={styles.title}>FINALIZAÇÃO</Text>
-          <View style={styles.container}>
-            <Switch/><Text>COLAR a etiqueta;</Text>
-            <Switch/><Text>DEIXAR sobre o equipamento o cabo de força e a página de status;</Text>
-            <Switch/><Text>EMBALAR o equipamento e colocar no palete de equipamentos prontos;</Text>
+          <View style={styles.checklist}>
+            <Text style={styles.title}>FINALIZAÇÃO</Text>
+            <SwitchButton text='COLAR a etiqueta'/>
+            <SwitchButton text='DEIXAR sobre o equipamento o cabo de força e a página de status'/>
+            <SwitchButton text='EMBALAR o equipamento e colocar no palete de equipamentos prontos'/>
           </View>
           <BackButton/>
-
       </ScrollView>
     </View>
   );
@@ -76,31 +74,21 @@ export default function FormPrep() {
 export const styles = StyleSheet.create({
     title: {
       fontWeight: 'bold',
-      top: 100,
       textAlign: 'center',
+      backgroundColor: 'gray',
+      color: 'white',
+      fontSize: 20
     },
-    text: {
-flexDirection: 'row',
-    },
-    container: {
-      borderStyle: 'solid',
-      borderColor: 'red',
-      borderWidth: 1,
-      padding: 20,
-      margin: 20,
-      top: 100,
-      alignItems: 'center',
-    },
-    subContainer: {
-      borderBottomColor: 'black',
-      flexDirection: 'row'
-    },
-    inputTxt: { 
-      borderWidth: 1,
-      borderColor: '#ccc',
-      width: '75%',
+    form: {
       padding: 10,
-      borderRadius: 5,
-      marginBottom: 10 
-    }
+      marginBottom: 20,
+      top: 75,
+      borderStyle: 'solid',
+      borderWidth: 1,
+    },
+    checklist: {
+      padding: 10,
+      marginBottom: 20,
+      top: 75,
+    },
 })

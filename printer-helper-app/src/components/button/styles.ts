@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         marginTop: 30,
+        top: 100,
     },
     homeButton: {
         width: '75%',
