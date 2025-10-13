@@ -9,7 +9,7 @@ type Props = {
 export function InputNumber({ titleForm }: Props){
     return (
         <View>
-            <Text>{titleForm}</Text>
+            <Text style={styles.inputTitle}>{titleForm}</Text>
             <TextInput style={styles.inputTxt} keyboardType="numeric"/>
         </View>
     )
@@ -18,7 +18,7 @@ export function InputNumber({ titleForm }: Props){
 export function InputData({ titleForm }: Props){
     return (
         <View>
-            <Text>{titleForm}</Text>
+            <Text style={styles.inputTitle}>{titleForm}</Text>
             <TextInput style={styles.inputTxt}/>
         </View>
     )
@@ -27,7 +27,7 @@ export function InputData({ titleForm }: Props){
 export function InputText({ titleForm }: Props){
     return (
         <View>
-            <Text>{titleForm}</Text>
+            <Text style={styles.inputTitle}>{titleForm}</Text>
             <TextInput style={styles.inputTxt}/>
         </View>
     )

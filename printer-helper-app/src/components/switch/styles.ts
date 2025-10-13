@@ -8,5 +8,6 @@ export const styles = StyleSheet.create({
     
     data: {
         fontSize: 15,
+        color: '#41423a'
     },
 })
