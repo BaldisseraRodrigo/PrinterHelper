@@ -2,6 +2,7 @@ import { BackButton, Button, ButtonOff } from '@/components/button'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import Header from '../components/header'
+import Menu from '../components/menu/menu'
 
 export default function Problems() {
     
@@ -10,7 +11,7 @@ export default function Problems() {
     }
 
     return (
-        <View>
+        <View style={styles.screen}>
             <View>
                 <Header subtitle='Soluções de Problemas'/>
             </View>
@@ -21,6 +22,7 @@ export default function Problems() {
                 <ButtonOff title='Brother'/>
                 <BackButton/>
             </View>
+            <Menu/>
         </View>
     )
 }
@@ -32,5 +34,10 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
+    },
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        backgroundColor: '#fff',
     },
 })

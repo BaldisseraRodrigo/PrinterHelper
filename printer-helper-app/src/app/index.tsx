@@ -19,37 +19,52 @@ export default function Index() {
     }
 
     return (
-        <View style={styles.container}>
-            <Header subtitle="Printer do Brasil" />
+            <>
+                <Header subtitle="Printer do Brasil" />
 
-            <View style={styles.imageContainer}>
-                <Image
-                    source={{
-                        uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLe27u9DF_EFGbrsx9iNuVN-2y6FU7xilbjQ&s"
-                    }}
-                    style={styles.image}
-                    resizeMode="contain" 
-                />
-            </View>
+                <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <Image
+                            source={{
+                                uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLe27u9DF_EFGbrsx9iNuVN-2y6FU7xilbjQ&s"
+                            }}
+                            style={styles.image}
+                            resizeMode="contain"
+                        />
+                        <Button title="Ir para Problemas" onPress={option1} />
+                        <Button title="Ir para Formulários" onPress={option2} />
+                        <Button title="Ir para Tabelas" onPress={option3} />
+                    </View>
 
-            <Menu />
-        </View>
-    )
-}
+                    <Menu />
+                </View>
+            </>
+        )
+    }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffffff',
+        maxHeight: '100%',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        
     },
     imageContainer: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+        marginTop: '60',
     },
     image: {
         width: 200,
         height: 200, 
         borderRadius: 16, 
+    },
+    buttonsContainer: {
+        padding: 20,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
 })
