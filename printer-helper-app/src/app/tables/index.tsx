@@ -2,10 +2,11 @@ import { BackButton, Button, ButtonOff } from '@/components/button'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import Header from '../../components/header'
+import Menu from '../../components/menu/menu'
 
 export default function Tables() {
     return (
-        <View>
+        <View style={styles.screen}>
             <View>
                 <Header subtitle='Tabelas'/>
             </View>
@@ -14,8 +15,8 @@ export default function Tables() {
                 <Button title='Toners'onPress={()=>router.push('/tables/toners')}/>
                 <ButtonOff title='Peças'/>
                 <ButtonOff title='Equipamentos'/>
-                <BackButton/>
             </View>
+            <Menu/>
         </View>
     )
 }
@@ -27,5 +28,10 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
+    },
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        backgroundColor: '#fff',
     },
 })

@@ -2,10 +2,11 @@ import { BackButton, Button, ButtonOff } from '@/components/button'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import Header from '../components/header'
+import Menu from '../components/menu/menu'
 
 export default function Forms() {
     return (
-        <View>
+        <View style={styles.screen}>
             <View>
                 <Header subtitle='Formulários'/>
             </View>
@@ -15,16 +16,21 @@ export default function Forms() {
                 <ButtonOff title='Formulário de Retirada'/>
                 <ButtonOff title='Formulário de Manutenção'/>
                 <ButtonOff title='Formulário de Desmanche'/>
-                <BackButton/>
             </View>
+            <Menu/>
         </View>
     )
 }
 
 export const styles = StyleSheet.create({
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        backgroundColor: '#fff',
+    },
     container: {
-        top: 200,
-        padding: 30,
+        marginTop: 20,
+        paddingHorizontal: 30,
         justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
