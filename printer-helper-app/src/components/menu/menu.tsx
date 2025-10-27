@@ -7,18 +7,24 @@ export default function Menu() {
   function home() {
       router.push('/'); 
     }
+  function checklist() {
+    router.push('/forms')
+  }
+  function problems() {
+    router.push('/problems')
+  }
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={home}>
-        <MaterialIcons name="print" size={28} color="#ffffffff" />
+      <TouchableOpacity onPress={problems}>
+        <MaterialIcons name="print" size={30} color="#ffffffff" />
       </TouchableOpacity>
 
       <TouchableOpacity onPress={home}>
-        <MaterialIcons name="home" size={60} color="#ffffffff"/>
+        <MaterialIcons name="home" size={50} color="#ffffffff"/>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={home}>
-        <MaterialIcons name="checklist" size={28} color="#ffffffff" />
+      <TouchableOpacity onPress={checklist}>
+        <MaterialIcons name="checklist" size={30} color="#ffffffff" />
       </TouchableOpacity>
     </View>
   );
@@ -30,7 +36,7 @@ container: {
     bottom: 0,
     left: 0,
     right: 0,
-    height: 90,
+    height: 60,
     backgroundColor: '#ed7d27ff',
     flexDirection: 'row',
     justifyContent: 'space-around',

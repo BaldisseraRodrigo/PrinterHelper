@@ -20,7 +20,6 @@ export default function Problems() {
                 <ButtonOff title='Ricoh'/>
                 <ButtonOff title='Lexmark'/>
                 <ButtonOff title='Brother'/>
-                <BackButton/>
             </View>
             <Menu/>
         </View>
