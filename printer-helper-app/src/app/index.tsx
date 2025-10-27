@@ -31,9 +31,9 @@ export default function Index() {
                             style={styles.image}
                             resizeMode="contain"
                         />
-                        <Button title="Ir para Problemas" onPress={option1} />
-                        <Button title="Ir para Formulários" onPress={option2} />
-                        <Button title="Ir para Tabelas" onPress={option3} />
+                        <Button title="Problemas" onPress={option1} />
+                        <Button title="Formulários" onPress={option2} />
+                        <Button title="Tabelas" onPress={option3} />
                     </View>
 
                     <Menu />
