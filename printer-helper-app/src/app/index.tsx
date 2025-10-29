@@ -20,42 +20,24 @@ export default function Index() {
 
     return (
             <>
-                <Header subtitle="Printer do Brasil" />
-
+                <Header subtitle="Menu Principal" />
                 <View style={styles.container}>
-                    <View style={styles.imageContainer}>
-                        <Image
-                            source={{
-                                uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLe27u9DF_EFGbrsx9iNuVN-2y6FU7xilbjQ&s"
-                            }}
-                            style={styles.image}
-                            resizeMode="contain"
-                        />
-                        <Button title="Problemas" onPress={option1} />
-                        <Button title="Formulários" onPress={option2} />
-                        <Button title="Tabelas" onPress={option3} />
-                    </View>
-
-                    <Menu />
+                    <Button title="Problemas" onPress={option1} />
+                    <Button title="Formulários" onPress={option2} />
+                    <Button title="Tabelas" onPress={option3} />
                 </View>
+
             </>
         )
     }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#ffffffff',
-        maxHeight: '100%',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        
-    },
-    imageContainer: {
-        flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        marginTop: '60',
+        top: 250,
+        padding: 30,
+        justifyContent: 'center',
+        gap: 16,
+        alignItems: 'center',  
     },
     image: {
         width: 200,

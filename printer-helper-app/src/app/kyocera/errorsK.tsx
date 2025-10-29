@@ -2,6 +2,7 @@ import { BackButton, Button, ButtonOff } from '@/components/button'
 import Header from '@/components/header'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
+import Menu from '@/components/menu/menu'
 
 export default function ErrorsK() {
 
@@ -14,10 +15,15 @@ export default function ErrorsK() {
             <View>
                 <Header subtitle='Kyocera/Erros'/>
             </View>
+            
+            <Menu/>
+            
             <View style={styles.container}>
-                <Button title='E0100' onPress={e0100}/>
-                <ButtonOff title='E6000'/>
-                <ButtonOff title='E7000'/>
+                <Button title='1000' onPress={e0100}/>
+                <ButtonOff title='2000'/>
+                <ButtonOff title='3000'/>
+                <ButtonOff title='4000'/>
+                <ButtonOff title='4000'/>
                 <BackButton/>
             </View>
         </View>
@@ -26,10 +32,15 @@ export default function ErrorsK() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 250,
+        top: 150,
         padding: 30,
         justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
+    },
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        backgroundColor: '#fff',
     },
 })
