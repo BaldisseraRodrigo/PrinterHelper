@@ -15,20 +15,26 @@ export default function Problems() {
             <View>
                 <Header subtitle='Soluções de Problemas'/>
             </View>
+            <Menu/>
             <View style={styles.container}>
                 <Button title='Kyocera' onPress={kyocera}/>
+                <View style={styles.family}>
+                    <ButtonOff title='ECOSYS'/>
+                    <ButtonOff title='TaskAlfa'/>
+                </View>
+                
                 <ButtonOff title='Ricoh'/>
                 <ButtonOff title='Lexmark'/>
                 <ButtonOff title='Brother'/>
             </View>
-            <Menu/>
+
         </View>
     )
 }
 
 export const styles = StyleSheet.create({
     container: {
-        top: 250,
+        top: 200,
         padding: 30,
         justifyContent: 'center',
         gap: 16,
@@ -39,4 +45,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         backgroundColor: '#fff',
     },
+    family: {
+        flexDirection: 'row',
+        width: 150,
+        justifyContent: 'center'
+    }
 })
