@@ -4,11 +4,11 @@ export const styles = StyleSheet.create({
     inputTxt: { 
       borderWidth: 1,
       borderColor: '#ece2d2',
-      width: '75%',
+      width: '100%',
       padding: 10,
       borderRadius: 5,
       marginBottom: 5,
-      maxWidth: 300
+      maxWidth: 400
     },
 
     inputTitle: { 

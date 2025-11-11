@@ -20,9 +20,8 @@ export default function Header({ subtitle }: Props){
 
 const styles = StyleSheet.create({
     header: {
-        top: 50,
         backgroundColor: '#ED7D27',
-        padding: 20,
+        paddingTop: 40
     },
     title: {
         color:'#f7f7f7',
@@ -31,7 +30,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     header2: {
-        top: 50,
         padding: 10,
         backgroundColor: '#ece2d2',
         zIndex: 3,

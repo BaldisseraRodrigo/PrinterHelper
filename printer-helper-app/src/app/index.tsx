@@ -1,11 +1,10 @@
 import { Button } from '@/components/button'
+import { Ionicons } from '@expo/vector-icons'
 import { router } from 'expo-router'
-import { StyleSheet, View, TextInput, ScrollView, Modal, Text, TouchableOpacity } from "react-native"
-import Header from '../components/header'
-import Menu from '../components/menu/menu'
 import { useState } from 'react'
-import { Ionicons } from '@expo/vector-icons' 
-import modelsData from '../../assets/data/modelos.json';
+import { Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import modelsData from '../../assets/data/modelos.json'
+import Header from '../components/header'
 
 export default function Index() {
     const [search, setSearch] = useState('')
@@ -24,16 +23,9 @@ export default function Index() {
         router.navigate('./tables')
     }
 
-    return (
-            <>
-                <Header subtitle="Menu Principal" />
-                <View style={styles.container}>
-                    <Button title="Problemas" onPress={option1} />
-                    <Button title="Formulários" onPress={option2} />
-                    <Button title="Tabelas" onPress={option3} />
-                </View>
-
-            </>
+    function handleSearch() {
+        const result = modelsData.find(item => 
+            item.modelo.toLowerCase() === search.trim().toLowerCase()
         )
         setFoundModel(result || null)
         setModalVisible(true)
@@ -42,7 +34,6 @@ export default function Index() {
     return (
         <View style={styles.page}>
             <Header subtitle="Printer do Brasil" />
-
 
             <View style={styles.searchContainer}>
                 <View style={styles.searchBox}>
@@ -95,18 +86,66 @@ export default function Index() {
                 </View>
             </Modal>
 
-            <Menu />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        top: 250,
-        padding: 30,
+    page: {
+        flex: 1,
+        backgroundColor: '#ffffffff',
+    },
+    scrollContainer: {
+        flexGrow: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingBottom: 100,
+    },
+    searchContainer: {
+        width: '90%',
+        alignSelf: 'center',
+        marginTop: 60,
+        marginBottom: 15,
+    },
+    searchBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#fafafa',
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: '#3b3b3bff',
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 4,
+    },
+    searchInput: {
+        flex: 1,
+        paddingVertical: 10,
+        paddingHorizontal: 16,
+        fontSize: 16,
+    },
+    searchButton: {
+        backgroundColor: '#ed7d27',
+        height: 45,
         justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 15,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
+    },
+    imageContainer: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         gap: 16,
-        alignItems: 'center',  
+        marginTop: 20,
+        width: '100%',
+    },
+    modalBackground: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(12, 12, 12, 0.3)',
     },
     modalBox: {
         backgroundColor: '#fff',
