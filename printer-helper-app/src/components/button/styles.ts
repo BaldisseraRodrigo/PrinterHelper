@@ -2,11 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     button: {
-        width: '75%',
+        width: '50%',
         height: 60,
         backgroundColor: '#ED7D27',
         borderRadius: 10,
         justifyContent: 'center',
+        alignSelf: 'center', 
     },
     backButton: {
         width: '75%',
@@ -25,6 +26,7 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         marginBottom: 30,
+        alignSelf: 'center'
     },
     buttonOff: {
         width: '75%',
@@ -32,6 +34,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#ece2d2',
         borderRadius: 10,
         justifyContent: 'center',
+        alignSelf: 'center'
     },
     title: {
         fontSize: 20,
@@ -39,4 +42,4 @@ export const styles = StyleSheet.create({
         color: '#F7F7F7',
         textAlign: 'center',
     }
-})
+});

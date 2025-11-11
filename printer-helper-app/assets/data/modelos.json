@@ -1,0 +1,17 @@
+[
+  {
+    "modelo": "exemplo",
+    "toner": "exemplo",
+    "firmware": "exemplo"
+  },
+  {
+    "modelo": "M2040",
+    "toner": "TK-1175",
+    "firmware": "v1.1"
+  },
+  {
+    "modelo": "M3040",
+    "toner": "TK-3102",
+    "firmware": "v1.1"
+  }
+]

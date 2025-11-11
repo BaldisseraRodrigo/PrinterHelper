@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     container: {
-        marginTop: 20,
+        marginTop: 80,
         paddingHorizontal: 30,
         justifyContent: 'center',
         gap: 16,
