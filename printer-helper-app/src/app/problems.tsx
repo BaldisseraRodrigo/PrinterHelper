@@ -1,4 +1,4 @@
-import { BackButton, Button, ButtonOff } from '@/components/button'
+import { Button, ButtonOff } from '@/components/button'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import Header from '../components/header'
@@ -15,7 +15,7 @@ export default function Problems() {
             <View>
                 <Header subtitle='Soluções de Problemas'/>
             </View>
-            <Menu/>
+
             <View style={styles.container}>
                 <Button title='Kyocera' onPress={kyocera}/>
                 <View style={styles.family}>
@@ -27,6 +27,8 @@ export default function Problems() {
                 <ButtonOff title='Lexmark'/>
                 <ButtonOff title='Brother'/>
             </View>
+
+            <Menu/>
 
         </View>
     )
@@ -48,6 +50,7 @@ export const styles = StyleSheet.create({
     family: {
         flexDirection: 'row',
         width: 150,
-        justifyContent: 'center'
-    }
+        justifyContent: 'center',
+        columnGap: 10,
+    },
 })

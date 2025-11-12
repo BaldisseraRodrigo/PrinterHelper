@@ -1,4 +1,3 @@
-import { BackButton } from '@/components/button'
 import Header from '@/components/header'
 import { StyleSheet, Text, View } from 'react-native'
 
@@ -23,9 +22,6 @@ export default function E0100() {
                     2.Certifique-se de que todos os cabos e conexões internas estejam firmes e sem danos.
                     3.Atualize o firmware.
                     4.Se as etapas anteriores não resolverem o problema, pode ser necessário substituir a placa principal.</Text>
-            </View>
-            <View style={styles.container}>
-                <BackButton/>
             </View>
         </View>
     )

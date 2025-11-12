@@ -1,5 +1,6 @@
-import { BackButton, Button, ButtonOff } from '@/components/button'
+import { Button, ButtonOff } from '@/components/button'
 import Header from '@/components/header'
+import Menu from '@/components/menu/menu'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 
@@ -10,7 +11,7 @@ export default function ChangePart() {
     }
 
     return (
-        <View>
+        <View style={styles.screen}>
             <View>
                 <Header subtitle='Troca de Peças'/>
             </View>
@@ -18,18 +19,23 @@ export default function ChangePart() {
                 <Button title='Unidade Fusora' onPress={fuserUnit}/>
                 <ButtonOff title='Unidade de Cilindro'/>
                 <ButtonOff title='Unidade Reveladora'/>
-                <BackButton/>
             </View>
+            <Menu/>
         </View>
     )
 }
 
 export const styles = StyleSheet.create({
     container: {
-        top: 250,
+        top: 200,
         padding: 30,
         justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
+    },
+    screen: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        backgroundColor: '#fff',
     },
 })

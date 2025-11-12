@@ -1,57 +1,52 @@
-import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { router } from 'expo-router'
+import { router } from 'expo-router';
+import React from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 export default function Menu() {
   function home() {
       router.push('/'); 
-    }
+  }
   function checklist() {
     router.push('/forms')
   }
   function problems() {
     router.push('/problems')
   }
+  function tables() {
+    router.push('/tables')
+  }
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={problems}>
-        <View style={styles.icon}>
-          <MaterialIcons name="print" size={50} color="#f7f7f7" />
-        </View>
+    <View style={styles.menuContainer}>
+      <TouchableOpacity onPress={home}>
+          <MaterialIcons name="home" size={40} color="#f7f7f7" />
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={home}>
-        <View style={styles.icon}>
-          <MaterialIcons name="home" size={50} color="#f7f7f7"/>
-        </View>
+      <TouchableOpacity onPress={problems}>
+          <MaterialIcons name="print" size={40} color="#f7f7f7"/>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={checklist}>
-        <View style={styles.icon}>
-          <MaterialIcons name="checklist" size={50} color="#f7f7f7" />
-        </View>
+          <MaterialIcons name="checklist" size={40} color="#f7f7f7" />
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={tables}>
+          <MaterialIcons name='table-rows' size={40} color="#f7f7f7" />
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-container: {
-    height: 60,
+menuContainer: {
+    height: 50,
+    width: 410,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    zIndex: 100,
-    top: 100,
+    backgroundColor: '#ece2d2',
+    display: 'flex',
+    position: 'absolute',
+    bottom: 45
 },
-
-icon: {
-  backgroundColor: '#ED7D27',
-  borderRadius: 100,
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: 75,
-  width: 75,
-}
 });
