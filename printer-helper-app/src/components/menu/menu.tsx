@@ -44,7 +44,7 @@ menuContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#ece2d2',
+    backgroundColor: '#ed7d27', // altera cor do menu
     display: 'flex',
     position: 'absolute',
     bottom: 45
