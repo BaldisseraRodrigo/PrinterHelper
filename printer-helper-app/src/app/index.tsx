@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     searchBox: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#fafafa',
+        backgroundColor: '#fafafaff',
         borderRadius: 12,
         borderWidth: 2,
         borderColor: '#3b3b3bff',
