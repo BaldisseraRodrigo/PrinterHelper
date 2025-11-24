@@ -29,7 +29,6 @@ export default function E0100() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 100,
         padding: 30,
         justifyContent: 'center',
         gap: 16,

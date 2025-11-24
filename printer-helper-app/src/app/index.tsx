@@ -12,11 +12,11 @@ export default function Index() {
     const [modalVisible, setModalVisible] = useState(false)
 
     function option1() {
-        router.navigate('/problems')
+        router.navigate('./problems')
     }
 
     function option2() {
-        router.navigate('/forms')
+        router.navigate('./forms')
     }
 
     function option3() {

@@ -1,13 +1,13 @@
 import { Button, ButtonOff } from '@/components/button'
+import Header from '@/components/header'
+import Menu from '@/components/menu/menu'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
-import Header from '../components/header'
-import Menu from '../components/menu/menu'
 
 export default function Problems() {
     
     function kyocera(){
-        router.navigate('/kyocera')
+        router.navigate('./kyocera/')
     }
 
     return (
@@ -36,9 +36,7 @@ export default function Problems() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 200,
         padding: 30,
-        justifyContent: 'center',
         gap: 16,
         alignItems: 'center',
     },

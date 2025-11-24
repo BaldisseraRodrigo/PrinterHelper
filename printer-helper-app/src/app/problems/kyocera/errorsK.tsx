@@ -1,30 +1,26 @@
 import { Button, ButtonOff } from '@/components/button'
+import Header from '@/components/header'
 import Menu from '@/components/menu/menu'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
-import Header from '../../components/header'
 
-export default function Kyocera() {
-        
-    function errors(){
-        router.navigate('/kyocera/errorsK')
-    }
+export default function ErrorsK() {
 
-    function changePart(){
-        router.navigate('/kyocera/changePart')
+    function e0100(){
+        router.navigate('./e0100')
     }
 
     return (
         <View style={styles.screen}>
             <View>
-                <Header subtitle='Kyocera ECOSYS M2040idn'/>
+                <Header subtitle='Kyocera/Erros'/>
             </View>
-
             <View style={styles.container}>
-                <Button title='Erros' onPress={errors}/>
-                <Button title='Troca de Peça' onPress={changePart}/>
-                <ButtonOff title='Inatividade'/>
-                <ButtonOff title='Manchas'/>
+                <Button title='1000' onPress={e0100}/>
+                <ButtonOff title='2000'/>
+                <ButtonOff title='3000'/>
+                <ButtonOff title='4000'/>
+                <ButtonOff title='4000'/>
             </View>
             <Menu/>
         </View>
@@ -33,7 +29,6 @@ export default function Kyocera() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 200,
         padding: 30,
         justifyContent: 'center',
         gap: 16,
