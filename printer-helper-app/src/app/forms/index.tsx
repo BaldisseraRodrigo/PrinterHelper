@@ -25,7 +25,6 @@ export default function Forms() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 200,
         padding: 30,
         justifyContent: 'center',
         gap: 16,

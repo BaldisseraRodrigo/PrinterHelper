@@ -1,4 +1,4 @@
-import { BackButton, Button, ButtonOff } from '@/components/button'
+import { Button, ButtonOff } from '@/components/button'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 import Header from '../../components/header'
@@ -23,7 +23,6 @@ export default function Tables() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 250,
         padding: 30,
         justifyContent: 'center',
         gap: 16,
