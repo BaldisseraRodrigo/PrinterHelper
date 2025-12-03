@@ -7,7 +7,7 @@ import { StyleSheet, View } from 'react-native'
 export default function ChangePart() {
 
     function fuserUnit(){
-        router.navigate('/kyocera/fuserUnit')
+        router.navigate('../kyocera/fuserUnit')
     }
 
     return (
@@ -27,7 +27,6 @@ export default function ChangePart() {
 
 export const styles = StyleSheet.create({
     container: {
-        top: 200,
         padding: 30,
         justifyContent: 'center',
         gap: 16,

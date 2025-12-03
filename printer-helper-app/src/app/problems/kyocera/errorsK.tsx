@@ -7,7 +7,7 @@ import { StyleSheet, View } from 'react-native'
 export default function ErrorsK() {
 
     function e0100(){
-        router.navigate('./e0100')
+        router.navigate('../kyocera/e0100')
     }
 
     return (

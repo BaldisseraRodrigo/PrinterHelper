@@ -7,7 +7,7 @@ import { StyleSheet, View } from 'react-native'
 export default function Problems() {
     
     function kyocera(){
-        router.navigate('./kyocera/')
+        router.navigate('/problems/kyocera')
     }
 
     return (

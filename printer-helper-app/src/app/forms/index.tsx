@@ -10,15 +10,14 @@ export default function Forms() {
             <View>
                 <Header subtitle='Formulários'/>
             </View>
-            <Menu/>
             <View style={styles.container}>
-                <Button title='Formulário de Preparação' onPress={() => router.push('./formPrep')}/>
-                <Button title='Formulário de Instalação' onPress={() => router.push('./formInst')}/>
-                <Button title='Formulário de Retirada' onPress={() => router.push('./formReti')}/>
+                <Button title='Formulário de Preparação' onPress={()=>router.push('/forms/formPrep')}/>
+                <Button title='Formulário de Instalação' onPress={()=>router.push('/forms/formInst')}/>
+                <Button title='Formulário de Retirada' onPress={()=>router.push('/forms/formReti')}/>
                 <ButtonOff title='Formulário de Manutenção'/>
                 <ButtonOff title='Formulário de Desmanche'/>
             </View>
-
+            <Menu/>
         </View>
     )
 }

@@ -1,4 +1,4 @@
-import { Button, ButtonOff } from '@/components/button'
+import { Button } from '@/components/button'
 import Header from '@/components/header'
 import Menu from '@/components/menu/menu'
 import { router } from 'expo-router'
@@ -17,14 +17,18 @@ export default function Kyocera() {
     return (
         <View style={styles.screen}>
             <View>
-                <Header subtitle='Kyocera ECOSYS M2040idn'/>
+                <Header subtitle='ERROS 1000'/>
             </View>
 
             <View style={styles.container}>
-                <Button title='Erros' onPress={errors}/>
-                <Button title='Troca de Peça' onPress={changePart}/>
-                <ButtonOff title='Inatividade'/>
-                <ButtonOff title='Manchas'/>
+                <Button title='0100-0970' onPress={errors}/>
+                <Button title='1000' onPress={changePart}/>
+                <Button title='2000' onPress={changePart}/>
+                <Button title='3000' onPress={changePart}/>
+                <Button title='4000' onPress={changePart}/>
+                <Button title='5000' onPress={changePart}/>
+                <Button title='6000' onPress={changePart}/>
+                <Button title='7000' onPress={changePart}/>
             </View>
             <Menu/>
         </View>
