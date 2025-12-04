@@ -4,10 +4,10 @@ import Menu from '@/components/menu/menu'
 import { router } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 
-export default function Kyocera() {
+export default function Kerrors() {
         
-    function errors(){
-        router.navigate('./kyocera/errorsK')
+    function e0970(){
+        router.navigate('./errors/e0100_0970/')
     }
 
     function changePart(){
@@ -17,11 +17,11 @@ export default function Kyocera() {
     return (
         <View style={styles.screen}>
             <View>
-                <Header subtitle='ERROS 1000'/>
+                <Header subtitle='Grupo de Erros Kyocera'/>
             </View>
 
             <View style={styles.container}>
-                <Button title='0100-0970' onPress={errors}/>
+                <Button title='0100-0970' onPress={e0970}/>
                 <Button title='1000' onPress={changePart}/>
                 <Button title='2000' onPress={changePart}/>
                 <Button title='3000' onPress={changePart}/>

@@ -7,17 +7,17 @@ import { StyleSheet, View } from 'react-native'
 export default function Kyocera() {
         
     function errors(){
-        router.navigate('./kyocera/errorsK')
+        router.navigate('./kyocera/errors/')
     }
 
     function changePart(){
-        router.navigate('./kyocera/changePart')
+        router.navigate('./kyocera/parts/')
     }
 
     return (
         <View style={styles.screen}>
             <View>
-                <Header subtitle='Kyocera ECOSYS M2040idn'/>
+                <Header subtitle='Kyocera'/>
             </View>
 
             <View style={styles.container}>

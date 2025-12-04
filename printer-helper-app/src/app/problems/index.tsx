@@ -18,11 +18,6 @@ export default function Problems() {
 
             <View style={styles.container}>
                 <Button title='Kyocera' onPress={kyocera}/>
-                <View style={styles.family}>
-                    <ButtonOff title='ECOSYS'/>
-                    <ButtonOff title='TaskAlfa'/>
-                </View>
-                
                 <ButtonOff title='Ricoh'/>
                 <ButtonOff title='Lexmark'/>
                 <ButtonOff title='Brother'/>
