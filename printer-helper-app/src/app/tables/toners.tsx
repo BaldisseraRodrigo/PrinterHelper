@@ -1,6 +1,6 @@
-import Menu from '@/components/menu/menu'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import Header from '../../components/header'
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Header from '../../components/header';
 
 export default function Tables() {
 
@@ -8,9 +8,32 @@ export default function Tables() {
         {
             type: 'Kyocera',
             item: [
-                {modelo: 'TK1175', capacidade: '5000 páginas', equipamento: 'ECOSYS M2040idn'},
-                {modelo: 'TK3162', capacidade: '5000 páginas', equipamento: 'ECOSYS M3145idn'},
-                {modelo: 'TK3182', capacidade: '5000 páginas', equipamento: 'ECOSYS M3655idn'},
+                {modelo: 'TK-1162', capacidade: '7.200 páginas', equipamento: 'ECOSYS P2040idn'},
+                {modelo: 'TK-1175', capacidade: '12.000 páginas', equipamento: 'ECOSYS M2040idn'},
+                {modelo: 'TK-3102', capacidade: '12.500 páginas', equipamento: 'ECOSYS M3040idn'},
+                {modelo: 'TK-3122', capacidade: '21.000 páginas', equipamento: 'ECOSYS M3550idn'},
+                {modelo: 'TK-3162', capacidade: '12.500 páginas', equipamento: 'ECOSYS P3145/P3040/M3145idn'},
+                {modelo: 'TK-3182', capacidade: '21.000 páginas', equipamento: 'ECOSYS P3055/P3155/M3655idn'},
+                {modelo: 'TK-5197Y', capacidade: '7.000 páginas', equipamento: 'TASKALFA 306ci'},
+                {modelo: 'TK-5197C', capacidade: '7.000 páginas', equipamento: 'TASKALFA 306ci'},
+                {modelo: 'TK-5197M', capacidade: '7.000 páginas', equipamento: 'TASKALFA 306ci'},
+                {modelo: 'TK-5197K', capacidade: '15.000 páginas', equipamento: 'TASKALFA 306ci'},
+                {modelo: 'TK-5207Y', capacidade: '12.000 páginas', equipamento: 'TASKALFA 356/358ci'},
+                {modelo: 'TK-5207C', capacidade: '12.000 páginas', equipamento: 'TASKALFA 356/358ci'},
+                {modelo: 'TK-5207M', capacidade: '12.000 páginas', equipamento: 'TASKALFA 356/358ci'},
+                {modelo: 'TK-5207K', capacidade: '18.000 páginas', equipamento: 'TASKALFA 356/358ci'},
+                {modelo: 'TK-5217Y', capacidade: '15.000 páginas', equipamento: 'TASKALFA 406ci'},
+                {modelo: 'TK-5217C', capacidade: '15.000 páginas', equipamento: 'TASKALFA 406ci'},
+                {modelo: 'TK-5217M', capacidade: '15.000 páginas', equipamento: 'TASKALFA 406ci'},
+                {modelo: 'TK-5217K', capacidade: '20.000 páginas', equipamento: 'TASKALFA 406ci'},
+                {modelo: 'TK-8337Y', capacidade: '15.000 páginas', equipamento: 'TASKALFA 3253ci'},
+                {modelo: 'TK-8337C', capacidade: '15.000 páginas', equipamento: 'TASKALFA 3253ci'},
+                {modelo: 'TK-8337M', capacidade: '15.000 páginas', equipamento: 'TASKALFA 3253ci'},
+                {modelo: 'TK-8337K', capacidade: '25.000 páginas', equipamento: 'TASKALFA 3253ci'},
+                {modelo: 'TK-8347Y', capacidade: '12.000 páginas', equipamento: 'TASKALFA 2552/2553ci'},
+                {modelo: 'TK-8347C', capacidade: '12.000 páginas', equipamento: 'TASKALFA 2552/2553ci'},
+                {modelo: 'TK-8347M', capacidade: '12.000 páginas', equipamento: 'TASKALFA 2552/2553ci'},
+                {modelo: 'TK-8347K', capacidade: '20.000 páginas', equipamento: 'TASKALFA 2552/2553ci'},
             ]
         },
         {
@@ -40,11 +63,10 @@ export default function Tables() {
     ]
 
     return (
-        <View style={styles.screen}>
+        <View style={styles.containerMain}>
+            <Header subtitle="FORMULÁRIO DE INSTALAÇÃO" />
+            <SafeAreaView style={styles.safeContainer}>
             <ScrollView>
-                <View>
-                    <Header subtitle='Toners'/>
-                </View>
                 <View style={styles.table}>
                     {toners.map((type, index) => (
                         <View key={index}>
@@ -65,12 +87,19 @@ export default function Tables() {
                     ))}
                 </View>
             </ScrollView>
-            <Menu/>
+            </SafeAreaView>       
         </View>
     )
 }
 
 export const styles = StyleSheet.create({
+    containerMain: {
+        flex: 1,
+    },
+    safeContainer: {
+        flex: 1,
+        marginTop: -35,
+    },
     container: {
         top: 100,
         padding: 5,
